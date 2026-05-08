@@ -1,0 +1,24 @@
+/***************
+General
+***************/
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --cta-bg: #b78345;
+    --cta-bg-hover: #ca9a5d;
+    --cta-text: #1f1712;
+    --site-dark: rgb(34, 21, 4);
+    --site-dark-transparent: rgba(34, 21, 4, 0.85);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    padding-top: calc(var(--header-height) + 20px);
+}

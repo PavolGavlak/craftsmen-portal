@@ -1,0 +1,50 @@
+main {
+    min-height: 100vh;
+    background: linear-gradient(rgba(249, 218, 173, 0.437), rgba(255, 206, 160, 0.53));
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+form input, form textarea {
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgb(47, 30, 7);
+    font-size: 20px;
+    color: rgb(47, 30, 7);
+    padding: 15px;
+    outline: none;    
+}
+
+form input {
+    width: 270px;
+}
+
+form textarea {
+    width: 555px;
+}
+
+input[type="submit"] {
+    background-color: rgb(173, 130, 21);
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: 0.2s linear;
+    margin: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(196, 145, 17);
+}
+    

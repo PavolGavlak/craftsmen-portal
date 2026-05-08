@@ -1,0 +1,175 @@
+main {
+    min-height: 100vh;
+    background: linear-gradient(rgba(254, 254, 254, 0.72), rgba(255, 255, 255, 0.88)), url(../img/cech-pozadie-dlhe.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.main-heading h1 {
+    text-align:center;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    color: rgba(60, 39, 7, 0.895);
+    font-size: 30px;
+}
+
+.filter {
+    width: fit-content;
+    margin: 0 auto 30px auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: rgba(255, 234, 208, 0.87);
+    border-radius: 12px;
+    padding: 10px 12px;
+}
+
+.filter-icon {
+    font-size: 18px;
+}
+
+.filter-input {
+    width: 150px;
+    padding: 10px 0;
+    outline: none;
+    font-size: 18px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+}
+
+.filter-input:focus {
+    background: transparent;
+}
+
+.filter-select {
+    min-width: 220px;
+    padding: 10px 14px;
+    outline: none;
+    font-size: 18px;
+    border: 1px solid rgba(79, 51, 38, 0.2);
+    border-radius: 10px;
+    background-color: rgba(255, 248, 240, 0.9);
+    color: #4f3326;
+    cursor: pointer;
+}
+
+.all-craftsmen {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.one-craftsman {
+    width: 400px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    background-color:rgba(255, 234, 208, 0.87) ;
+    transition: all 0.3s linear;
+    padding: 20px;
+}
+
+.craftsman-heading {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+.craftsman-heading h2 {
+    margin: 0;
+}
+
+.craftsman-title-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.craftsman-craft-name {
+    margin: 0;
+    font-size: 20px;
+}
+
+.craftsman-profile-photo {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5%;
+    flex-shrink: 0;
+    border: 3px solid rgba(255, 255, 255, 0.75);
+}
+
+.craftsman-profile-photo.placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.one-craftsman:hover {
+    transform: scale(1.02);
+}
+
+.craftsman-profile-link {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+.craftsman-profile-link h2:hover {
+    color: #94631e;
+}
+
+.craftsman-profile-link h2,
+.craftsman-profile-link .craftsman-profile-photo {
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+
+
+.empty-message {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    padding: 30px 20px;
+}
+
+@media (max-width: 500px) {
+    .filter {
+        width: min(100%, calc(100% - 30px));
+        justify-content: center;
+    }
+
+    .filter-input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .filter-select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .craftsman-heading {
+        text-align: center;
+    }
+}

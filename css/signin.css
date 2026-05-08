@@ -1,0 +1,85 @@
+main {
+    padding-top: 0;
+}
+
+:root {
+    --form-panel-gradient: linear-gradient(rgba(28, 20, 15, 0.789), rgba(28, 20, 15, 0.48));
+    --form-panel-border: rgba(255, 255, 255, 0.18);
+}
+
+/* Form section */
+
+.form {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   background: linear-gradient(rgba(77, 73, 70, 0.604),rgba(71, 67, 63, 0.664) ), url(../img/taniere.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.form h1 {
+    color: white;
+    font-size: 45px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.signin-panel {
+    width: min(100%, 520px);
+    padding: 34px 32px;
+    border-radius: 22px;
+    background: var(--form-panel-gradient);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--form-panel-border);
+    box-shadow: 0 18px 40px rgba(14, 9, 6, 0.549);
+}
+
+.form form {
+    text-align: center;
+}
+
+input::placeholder {
+    color: whitesmoke;
+}
+
+.email, .password {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    width: 268px;
+    font-size: 20px;
+    padding: 5px 10px;
+    background: var(--cta-bg);
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 18px;
+    color: var(--cta-text);
+    transition: all 0.1s linear;
+}
+
+.btn:hover {
+    background: var(--cta-bg-hover);
+    width: 269px;
+}
+
+@media (max-width: 700px) {
+    .signin-panel {
+        width: min(calc(100% - 28px), 100%);
+        padding: 26px 20px;
+    }
+}

@@ -1,0 +1,62 @@
+/***********
+   Header
+***********/
+
+:root {
+    --header-height: 70px;
+    --header-bg: var(--site-dark-transparent);
+    --header-bg-opaque: var(--site-dark);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--header-bg);
+    height: var(--header-height);
+    transition: background-color 0.25s ease;
+}
+
+header.is-at-top {
+    background-color: var(--header-bg-opaque);
+}
+
+.logo {
+    flex-grow: 1;
+}
+
+.logo img {
+    width: 50px;
+    margin-left: 20px;
+}
+
+/* Navigacia */
+
+nav {
+    margin-right: 30px;
+}
+
+nav li {
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 10px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s ease;
+}
+
+nav li a:hover {
+    color: rgb(230, 216, 163);
+}
+
+.menu-icon {
+     display: none;
+}

@@ -1,0 +1,29 @@
+main {
+    padding-top: 0;
+}
+
+.contact-page-section {
+    position: relative;
+    min-height: 100vh;
+    padding: calc(var(--header-height) + 34px) 0 90px;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.contact-page-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.642), rgba(0, 0, 0, 0.642)),
+        url(../img/pexels.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0;
+    animation: contactBackgroundFade 2.5s ease-out forwards;
+}
+
+.contact-page-section .contact-band-panel {
+    margin-top: 40px;
+}
