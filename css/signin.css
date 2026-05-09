@@ -15,7 +15,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   background: linear-gradient(rgba(77, 73, 70, 0.604),rgba(71, 67, 63, 0.664) ), url(../img/taniere.webp);
+   background: linear-gradient(rgba(77, 73, 70, 0.604),rgba(71, 67, 63, 0.664) ), url(../img/remeslo1.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

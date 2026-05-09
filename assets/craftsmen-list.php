@@ -5,8 +5,10 @@
 </section>
 
 <section class="filter">
-    <span class="filter-icon">&#128269;</span>
-    <input type="text" class="filter-input" placeholder="Hľadať podľa mena">
+    <div class="filter-search">
+        <span class="filter-icon">&#128269;</span>
+        <input type="text" class="filter-input" placeholder="Hľadať podľa mena">
+    </div>
     <select class="filter-select" aria-label="Filtrovať podľa remesla">
         <option value="">Všetky remeslá</option>
         <option value="kovac">Kováč</option>

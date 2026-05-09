@@ -7,6 +7,9 @@ require_once __DIR__ . "/../vendor/PHPMailer/src/Exception.php";
 require_once __DIR__ . "/../vendor/PHPMailer/src/PHPMailer.php";
 require_once __DIR__ . "/../vendor/PHPMailer/src/SMTP.php";
 
+$appConfig = require __DIR__ . "/../config/app.php";
+$mailConfig = $appConfig["mail"];
+
 $contact_first_name = "";
 $contact_second_name = "";
 $contact_email = "";
@@ -41,15 +44,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["contact_form"])) {
 
         try {
             $mail->isSMTP();
-            $mail->Host = "smtp.gmail.com";
+            $mail->Host = $mailConfig["host"];
             $mail->SMTPAuth = true;
-            $mail->Username = "araktonis@gmail.com";
-            $mail->Password = "pxfkyggolgcsmfen";
-            $mail->SMTPSecure = "ssl";
-            $mail->Port = 465;
+            $mail->Username = $mailConfig["username"];
+            $mail->Password = $mailConfig["password"];
+            $mail->SMTPSecure = $mailConfig["encryption"];
+            $mail->Port = $mailConfig["port"];
 
-            $mail->setFrom("araktonis@gmail.com");
-            $mail->addAddress("gavlakpavol2@gmail.com");
+            $mail->setFrom($mailConfig["from"]);
+            $mail->addAddress($mailConfig["to"]);
             $mail->Subject = "Vyplnený kontaktný formulár";
             $mail->Body = "Meno: {$contact_first_name} {$contact_second_name}\n"
                 . "E-mail: {$contact_email}\n"

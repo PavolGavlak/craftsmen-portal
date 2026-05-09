@@ -3,7 +3,7 @@
 require "../classes/Database.php";
 require "../classes/User.php";
 require "../classes/Auth.php";
-require "../classes/image.php";
+require "../classes/Image.php";
 
 session_start();
 
@@ -191,3 +191,4 @@ if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
 </body>
 
 </html>
+

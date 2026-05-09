@@ -2,7 +2,7 @@
 require "../classes/Database.php";
 require "../classes/Auth.php";
 require "../classes/User.php";
-require "../classes/image.php";
+require "../classes/Image.php";
 
 session_start();
 
@@ -103,3 +103,4 @@ $allImages = Image::getImagesByUserId($connection, $user_id);
 </body>
 
 </html>
+

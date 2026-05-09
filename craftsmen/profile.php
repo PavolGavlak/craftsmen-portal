@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 
 require "../classes/Database.php";
 require "../classes/User.php";
-require "../classes/image.php";
+require "../classes/Image.php";
 
 $database = new Database();
 $connection = $database->connectionDB();
@@ -40,7 +40,7 @@ if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
 
     <script src="https://kit.fontawesome.com/1da98e69a2.js" crossorigin="anonymous"></script>
 
-    <title>Profil remeselníka</title>
+    <title>Profil remeselnĂ­ka</title>
 </head>
 
 <body>
@@ -50,7 +50,7 @@ if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
     <main>
         <section class="one-craftsman">
             <?php if ($craftsman === null): ?>
-                <p class="empty-message">Remeselník nebol nájdený alebo ešte nie je schválený.</p>
+                <p class="empty-message">RemeselnĂ­k nebol nĂˇjdenĂ˝ alebo eĹˇte nie je schvĂˇlenĂ˝.</p>
             <?php else: ?>
                 <div class="one-craftsman-box">
                     <div class="profile-summary">
@@ -75,7 +75,7 @@ if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
                             <p><span class="profile-label">Zameranie:</span> <?= htmlspecialchars(($craftsman["business_name"] ?? "") !== "" ? $craftsman["business_name"] : $craftsman["craft_name"]) ?></p>
                             <p><span class="profile-label">Remeslo:</span> <?= htmlspecialchars($craftsman["craft_name"]) ?></p>
                             <p><span class="profile-label">Mesto/obec:</span> <?= htmlspecialchars($craftsman["city"]) ?></p>
-                            <p><span class="profile-label">Telefón:</span> <?= htmlspecialchars($craftsman["phone"] ?: "-") ?></p>
+                            <p><span class="profile-label">TelefĂłn:</span> <?= htmlspecialchars($craftsman["phone"] ?: "-") ?></p>
                             <p><span class="profile-label">E-mail:</span> <?= htmlspecialchars($craftsman["email"] ?: "-") ?></p>
                             <p>
                                 <span class="profile-label">Facebook:</span>
@@ -97,7 +97,7 @@ if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
 
                     <section class="profile-photos">
                         <?php if (empty($galleryImages)): ?>
-                            <p>Fotky ešte neboli pridané.</p>
+                            <p>Fotky eĹˇte neboli pridanĂ©.</p>
                         <?php else: ?>
                             <div class="profile-photos-grid">
                                 <?php foreach ($galleryImages as $one_image): ?>
@@ -132,3 +132,4 @@ if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
 </body>
 
 </html>
+
