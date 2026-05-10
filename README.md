@@ -1,6 +1,6 @@
 # Craftsmen Portal
 
-Website: https://craftsmen-portal.free.nf/index.php
+Website: https://craftsmen-portal.free.nf/index.php (! Aplikácia slúži ako ukážka portfólia a je umiestnená na free hostingu, preto môže prvé načítanie trvať približne 15 sekúnd.)
 
 ## O projekte
 Craftsmen Portal je webová aplikácia zameraná na prezentáciu remeselníkov a ich tvorby. Projekt slúži ako verejný katalóg remeselníkov, kde si návštevník môže pozrieť schválené profily, fotografie prác a články z prostredia tradičných remesiel.
