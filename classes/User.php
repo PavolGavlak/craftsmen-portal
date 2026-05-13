@@ -1,7 +1,15 @@
 <?php
 
+/**
+ * Handles all user-related database operations for the application.
+ */
 class User
 {
+    /**
+     * Creates a new user record and returns its database id.
+     *
+     * @return string|false
+     */
     public static function createUser(
         PDO $connection,
         string $firstName,
@@ -73,6 +81,9 @@ class User
         }
     }
 
+    /**
+     * Verifies login credentials for the supplied email address.
+     */
     public static function autentication(PDO $connection, string $loginEmail, string $loginPassword): bool
     {
         $sql = "SELECT password
@@ -97,6 +108,9 @@ class User
         }
     }
 
+    /**
+     * Finds a user id by email address.
+     */
     public static function getUserId(PDO $connection, string $email): ?int
     {
         $sql = "SELECT id
@@ -121,6 +135,9 @@ class User
         }
     }
 
+    /**
+     * Returns the role for the selected user id.
+     */
     public static function getUseRole(PDO $connection, int $id): ?string
     {
         $sql = "SELECT role
@@ -145,6 +162,9 @@ class User
         }
     }
 
+    /**
+     * Returns one user row, optionally limited to selected columns.
+     */
     public static function getUser(PDO $connection, int $id, string $columns = "*"): ?array
     {
         $sql = "SELECT {$columns}
@@ -167,6 +187,11 @@ class User
         }
     }
 
+    /**
+     * Returns all users together with their selected profile image.
+     *
+     * @return array<int, array<string, mixed>>
+     */
     public static function getAllUsers(PDO $connection, bool $includeAdmin = false): array
     {
         $sql = "SELECT u.id,
@@ -204,6 +229,11 @@ class User
         }
     }
 
+    /**
+     * Returns only approved public craftsmen.
+     *
+     * @return array<int, array<string, mixed>>
+     */
     public static function getApprovedUsers(PDO $connection): array
     {
         $sql = "SELECT u.id,
@@ -237,6 +267,9 @@ class User
         }
     }
 
+    /**
+     * Returns one approved public user profile.
+     */
     public static function getApprovedUser(PDO $connection, int $id): ?array
     {
         $sql = "SELECT *
@@ -261,6 +294,9 @@ class User
         }
     }
 
+    /**
+     * Updates editable profile fields for one user.
+     */
     public static function updateUser(
         PDO $connection,
         int $id,
@@ -311,6 +347,9 @@ class User
         }
     }
 
+    /**
+     * Deletes one user account.
+     */
     public static function deleteUser(PDO $connection, int $id): bool
     {
         $sql = "DELETE FROM user

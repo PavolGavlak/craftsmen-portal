@@ -23,6 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["contact_form"])) {
     $contact_email = trim($_POST["email"] ?? "");
     $contact_message = trim($_POST["message"] ?? "");
 
+    // Keep validation close to the submitted data so the shared section can
+    // immediately render field values and messages back to the user.
     if ($contact_first_name === "") {
         $contact_errors[] = "Prosím, vložte krstné meno.";
     }
@@ -43,6 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["contact_form"])) {
         $mail = new PHPMailer(true);
 
         try {
+            $mail->CharSet = "UTF-8";
+            $mail->Encoding = "base64";
             $mail->isSMTP();
             $mail->Host = $mailConfig["host"];
             $mail->SMTPAuth = true;

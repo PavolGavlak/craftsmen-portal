@@ -4,6 +4,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
+// The same header is reused from root pages and nested directories.
 $publicBasePath = $publicBasePath ?? "./";
 $currentScript = basename($_SERVER["SCRIPT_NAME"] ?? "");
 $roleForHeader = $_SESSION["role"] ?? null;
@@ -25,7 +26,6 @@ $accountLink = null;
 if ($roleForHeader === "user" && $loggedInUserId !== null) {
     $accountLink = $publicBasePath . "admin/one-craftsman.php?id=" . $loggedInUserId;
 }
-
 ?>
 
 <header>
@@ -34,6 +34,7 @@ if ($roleForHeader === "user" && $loggedInUserId !== null) {
             <img src="<?= $publicBasePath ?>img/logo-lite.png" alt="Cech logo">
         </a>
     </div>
+
     <nav>
         <ul>
             <li><a href="<?= $publicBasePath ?>index.php">Domov</a></li>
@@ -54,6 +55,7 @@ if ($roleForHeader === "user" && $loggedInUserId !== null) {
             <?php endif; ?>
         </ul>
     </nav>
+
     <div class="menu-icon">
         <i class="fa-solid fa-bars"></i>
     </div>

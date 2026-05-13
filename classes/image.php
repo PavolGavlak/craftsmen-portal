@@ -1,7 +1,15 @@
 <?php
 
+/**
+ * Provides photo-related database and filesystem helpers.
+ */
 class Image
 {
+    /**
+     * Removes database records that point to files missing from disk.
+     *
+     * @return array<int, array<string, mixed>>
+     */
     private static function filterValidImages(int $userId, array $images): array
     {
         $validImages = [];
@@ -11,7 +19,7 @@ class Image
                 continue;
             }
 
-            $imagePath = __DIR__ . "/../uploads/" . $userId . "/" . $image["file_name"];
+            $imagePath = __DIR__ . "/../uploads/{$userId}/{$image['file_name']}";
 
             if (!file_exists($imagePath)) {
                 continue;
@@ -23,6 +31,9 @@ class Image
         return $validImages;
     }
 
+    /**
+     * Stores a newly uploaded image record.
+     */
     public static function insertImage(PDO $connection, int $userId, string $imageName): bool
     {
         $sql = "INSERT INTO photos (user_id, file_name)
@@ -35,6 +46,11 @@ class Image
         return $stmt->execute();
     }
 
+    /**
+     * Returns all valid images for a user, newest first.
+     *
+     * @return array<int, array<string, mixed>>
+     */
     public static function getImagesByUserId(PDO $connection, int $userId): array
     {
         $sql = "SELECT id, file_name, is_profile
@@ -49,6 +65,9 @@ class Image
         return self::filterValidImages($userId, $stmt->fetchAll(PDO::FETCH_ASSOC));
     }
 
+    /**
+     * Returns the current profile image or null when none is set.
+     */
     public static function getProfileImageByUserId(PDO $connection, int $userId): ?array
     {
         $sql = "SELECT id, file_name, is_profile
@@ -72,6 +91,9 @@ class Image
         return $validImages[0] ?? null;
     }
 
+    /**
+     * Marks one image as the active profile photo and resets the others.
+     */
     public static function setProfileImage(PDO $connection, int $userId, int $imageId): bool
     {
         try {
@@ -97,6 +119,9 @@ class Image
         }
     }
 
+    /**
+     * Deletes an image file from disk.
+     */
     public static function deletePhotoFromDirectory(string $path): bool
     {
         try {
@@ -115,6 +140,9 @@ class Image
         }
     }
 
+    /**
+     * Deletes one image record for the selected user.
+     */
     public static function deletePhotoFromDatabase(PDO $connection, string $imageName, int $userId): bool
     {
         $sql = "DELETE FROM photos

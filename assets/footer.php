@@ -11,7 +11,6 @@ $footerRole = $_SESSION["role"] ?? null;
 $footerCraftsmenLink = $footerRole === "admin"
     ? $footerBasePath . "admin/craftsmen.php"
     : $footerBasePath . "all-craftsmen.php";
-
 ?>
 
 <footer class="site-footer">

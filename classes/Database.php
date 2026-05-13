@@ -1,5 +1,8 @@
-<?php
+﻿<?php
 
+/**
+ * Builds a PDO connection from the local application configuration.
+ */
 class Database
 {
     private array $config;
@@ -10,9 +13,16 @@ class Database
         $this->config = $appConfig["database"];
     }
 
+    /**
+     * Returns a configured PDO connection for the active environment.
+     */
     public function connectionDB(): PDO
     {
-        $dsn = "mysql:host={$this->config['host']};dbname={$this->config['name']};charset=utf8";
+        $dsn = sprintf(
+            "mysql:host=%s;dbname=%s;charset=utf8",
+            $this->config["host"],
+            $this->config["name"]
+        );
 
         try {
             $connection = new PDO($dsn, $this->config["user"], $this->config["password"]);

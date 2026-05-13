@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Returns all article cards and detail content used across the website.
+ *
+ * @return array<int, array<string, mixed>>
+ */
 function getArticlesData(): array
 {
     return [
@@ -67,7 +72,7 @@ function getArticlesData(): array
             "lead" => "Modranská majolika patrí k najvýraznejším symbolom slovenskej ľudovej keramiky a dodnes spája presnosť remesla s jemnosťou rukopisnej výzdoby.",
             "body" => [
                 "Ručne maľovaná keramika vzniká v pomalom rytme, kde sa tvar, glazúra a dekor navzájom dopĺňajú až do výsledného celku. Pri modranskej majolike je dôležitá nielen technická zručnosť, ale aj cit pre ornament, kompozíciu a tradičné farebné ladenie, ktoré sa odovzdáva z generácie na generáciu.",
-                "Každý kus prechádza viacerými etapami od formovania nádoby cez prvý výpal až po maľovanie jemných detailov na glazovaný povrch. Práve táto fáza je pre mnohých tvorcov najosobnejšia, pretože do predmetu vkladá ich vlastný rukopis. Ani pri opakovaní známych motívov nevznikajú dva úplne rovnaké kusy.",
+                "Každý kus prechádza viacerými etapami od formovania nádoby cez prvý výpal až po maľovanie jemných detailov na glazovaný povrch. Práve táto fáza je pre mnohých tvorcov najosobnejšia, pretože do predmetu vkladajú ich vlastný rukopis. Ani pri opakovaní známych motívov nevznikajú dva úplne rovnaké kusy.",
                 "Dnes si modranská majolika nachádza miesto nielen v tradičných domácnostiach, ale aj v moderných interiéroch a zbierkach. Jej sila spočíva v tom, že si zachovala remeselnú poctivosť a zároveň pôsobí nadčasovo. Aj preto zostáva jedným z najživších príkladov toho, ako môže tradičné remeslo prirodzene existovať aj v súčasnosti.",
             ],
         ],
@@ -91,6 +96,9 @@ function getArticlesData(): array
     ];
 }
 
+/**
+ * Returns one article by slug or null when it does not exist.
+ */
 function getArticleBySlug(string $slug): ?array
 {
     foreach (getArticlesData() as $article) {

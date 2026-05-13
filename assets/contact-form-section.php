@@ -3,8 +3,7 @@
 $contact_section_id = $contact_section_id ?? null;
 $contact_section_class = $contact_section_class ?? "contact-section";
 $contact_form_action = $contact_form_action ?? "contact.php";
-$is_contact_page = ($contact_section_class === "contact-page-section");
-
+$is_contact_page = $contact_section_class === "contact-page-section";
 ?>
 
 <section<?= $contact_section_id ? ' id="' . htmlspecialchars($contact_section_id) . '"' : "" ?> class="<?= htmlspecialchars($contact_section_class) ?>">
