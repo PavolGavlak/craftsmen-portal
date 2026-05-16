@@ -7,7 +7,7 @@
 .hero-section {
     min-height: 110vh;
     background: linear-gradient(rgba(96, 69, 53, 0.549), rgba(97, 66, 47, 0.16)),
-        url(../img/cech-pozadie.png);
+        url(../img/cech-pozadie.webp);
     background-size: cover;
     background-position: center 58%;
     background-attachment: local;

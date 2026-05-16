@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 require "./classes/Database.php";
 require "./classes/User.php";
@@ -17,7 +17,7 @@ $connection = $database->connectionDB();
 
 $craftsmen = User::getApprovedUsers($connection);
 $isAdminCraftsmenList = false;
-$profileLinkPattern = "craftsmen/profile.php?id=%d";
+$profileLinkPattern = "one-craftsman.php?id=%d";
 $imageBasePath = "./uploads/";
 
 ?>
@@ -35,7 +35,7 @@ $imageBasePath = "./uploads/";
     <link rel="stylesheet" href="./css/craftsmen-list.css">
 
     <script src="https://kit.fontawesome.com/1da98e69a2.js" crossorigin="anonymous"></script>
-    <title>Všetci remeselníci</title>
+    <title>VĹˇetci remeselnĂ­ci</title>
 </head>
 
 <body>
@@ -51,3 +51,4 @@ $imageBasePath = "./uploads/";
 </body>
 
 </html>
+

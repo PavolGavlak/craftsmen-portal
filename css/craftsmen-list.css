@@ -1,6 +1,6 @@
 main {
     min-height: 100vh;
-    background: linear-gradient(rgba(254, 254, 254, 0.72), rgba(255, 255, 255, 0.88)), url(../img/cech-pozadie-dlhe.png);
+    background: linear-gradient(rgba(254, 254, 254, 0.72), rgba(255, 255, 255, 0.88)), url(../img/cech-pozadie-dlhe.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

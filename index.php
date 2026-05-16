@@ -25,7 +25,7 @@
     <main class="home-main">
         <section class="hero-section">
             <div class="main-heading">
-                <img src="./img/cech-logo.png" alt="Logo cechu remeselníkov">
+                <img src="./img/cech-logo.webp" alt="Logo cechu remeselníkov">
 
                 <div class="main-heading-copy">
                     <h1>Remeselníci a tvorcovia zo Žilinského kraja</h1>
@@ -54,7 +54,7 @@
 
                 <div class="news-layout">
                     <article class="news-featured-card">
-                        <img src="./img/jarmok.png" alt="Hlavný leták podujatia">
+                        <img src="./img/jarmok.webp" alt="Hlavný leták podujatia">
                         <div class="news-featured-overlay">
                             <span class="news-badge">Hlavné podujatie</span>
                             <h3>Jarný remeselný jarmok 2026</h3>
@@ -68,7 +68,7 @@
 
                     <div class="news-side-stack">
                         <article class="news-side-card">
-                            <img src="./img/workshop.png" alt="Workshop výroby">
+                            <img src="./img/workshop.webp" alt="Workshop výroby">
                             <div class="news-side-overlay">
                                 <span class="news-badge small">Workshop</span>
                                 <h3>Škola košikárstva</h3>
@@ -77,7 +77,7 @@
                         </article>
 
                         <article class="news-side-card">
-                            <img src="./img/vystava.png" alt="Výstava remeselnej tvorby">
+                            <img src="./img/vystava.webp" alt="Výstava remeselnej tvorby">
                             <div class="news-side-overlay">
                                 <span class="news-badge small">Výstava</span>
                                 <h3>Hlina a drevo</h3>

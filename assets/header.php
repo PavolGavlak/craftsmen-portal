@@ -31,7 +31,7 @@ if ($roleForHeader === "user" && $loggedInUserId !== null) {
 <header>
     <div class="logo">
         <a href="<?= $publicBasePath ?>index.php">
-            <img src="<?= $publicBasePath ?>img/logo-lite.png" alt="Cech logo">
+            <img src="<?= $publicBasePath ?>img/logo-lite.webp" alt="Cech logo">
         </a>
     </div>
 

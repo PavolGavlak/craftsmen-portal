@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
@@ -6,7 +6,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 
 $scriptPath = str_replace("\\", "/", $_SERVER["SCRIPT_NAME"] ?? "");
 $footerBasePath = $footerBasePath
-    ?? ((str_contains($scriptPath, "/admin/") || str_contains($scriptPath, "/craftsmen/")) ? "../" : "./");
+    ?? (str_contains($scriptPath, "/admin/") ? "../" : "./");
 $footerRole = $_SESSION["role"] ?? null;
 $footerCraftsmenLink = $footerRole === "admin"
     ? $footerBasePath . "admin/craftsmen.php"

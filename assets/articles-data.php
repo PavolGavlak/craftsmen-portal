@@ -16,7 +16,7 @@ function getArticlesData(): array
             "card_image" => "./img/reportaz.png",
             "detail_images" => [
                 "./img/reportaz.png",
-                "./img/reportaz1.png",
+                "./img/reportaz1.webp",
             ],
             "lead" => "V Kežmarku pribudol nový priestor, kde sa remeslo nekonzervuje len za sklom, ale znovu sa učí, skúša a odovzdáva ďalej medzi ľuďmi.",
             "body" => [
@@ -30,10 +30,10 @@ function getArticlesData(): array
             "category" => "Súťaž",
             "title" => "Zlatá palička 2024: Výsledky celoslovenskej súťaže",
             "excerpt" => "Pozrite si víťazné diela v kategórii tradičnej a modernej paličkovanej čipky z celého Slovenska.",
-            "card_image" => "./img/sutaz.png",
+            "card_image" => "./img/sutaz1.webp",
             "detail_images" => [
+                "./img/sutaz1.webp",
                 "./img/sutaz.png",
-                "./img/sutaz1.png",
             ],
             "lead" => "Celoslovenská súťaž Zlatá palička aj tento rok ukázala, že čipka môže byť zároveň verná tradícii aj odvážne súčasná.",
             "body" => [
@@ -50,7 +50,7 @@ function getArticlesData(): array
             "card_image" => "./img/rozhovor.png",
             "detail_images" => [
                 "./img/rozhovor.png",
-                "./img/rozhovor1.png",
+                "./img/rozhovor1.webp",
             ],
             "lead" => "Rozhovor s keramikom, ktorý vymenil manažérsku kariéru za pomalšiu, presnejšiu a osobnejšiu prácu s materiálom, ktorý sa nedá oklamať.",
             "body" => [
@@ -64,10 +64,10 @@ function getArticlesData(): array
             "category" => "Dielňa",
             "title" => "Maľovaná keramika (modranská majolika)",
             "excerpt" => "Objavte fascinujúce umenie ručne maľovanej keramiky, ktoré po stáročia definuje kultúrnu identitu Modry a jej okolia.",
-            "card_image" => "./img/malovana-keramika.png",
+            "card_image" => "./img/malovana-keramika1.webp",
             "detail_images" => [
+                "./img/malovana-keramika1.webp",
                 "./img/malovana-keramika.png",
-                "./img/malovana-keramika1.png",
             ],
             "lead" => "Modranská majolika patrí k najvýraznejším symbolom slovenskej ľudovej keramiky a dodnes spája presnosť remesla s jemnosťou rukopisnej výzdoby.",
             "body" => [
@@ -81,11 +81,11 @@ function getArticlesData(): array
             "category" => "Portrét",
             "title" => "Umelkyňa, ktorá vdýchla život textilným bábikám",
             "excerpt" => "Príbeh autorky, ktorá premieňa látku, niť a starostlivo vyberané detaily na textilné bábiky s vlastným charakterom a jemným príbehom.",
-            "card_image" => "./img/textilna-babika.png",
+            "card_image" => "./img/textilna-babika1.webp",
             "detail_images" => [
+                "./img/textilna-babika1.webp",
                 "./img/textilna-babika.png",
-                "./img/textilna-babika1.png",
-            ],
+                ],
             "lead" => "Za každou textilnou bábikou stojí trpezlivá ručná práca, cit pre detail a autorka, ktorá v obyčajnom materiáli hľadá osobnosť aj emóciu.",
             "body" => [
                 "Tvorba textilných bábik je disciplína, v ktorej sa stretáva remeselná presnosť s výtvarnou predstavivosťou. Autorka začína od návrhu proporcií, výberu látok a farebného ladenia, no skutočný charakter postavy vzniká až počas postupného šitia, vypĺňania, modelovania tváre a vrstvenia drobných detailov.",

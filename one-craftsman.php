@@ -1,17 +1,17 @@
 ﻿<?php
 
-require "../classes/Database.php";
-require "../classes/User.php";
-require "../classes/Image.php";
+require "./classes/Database.php";
+require "./classes/User.php";
+require "./classes/Image.php";
 
 $database = new Database();
 $connection = $database->connectionDB();
 
 if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
-    $user_id = (int) $_GET["id"];
-    $craftsman = User::getApprovedUser($connection, $user_id);
-    $allImages = $craftsman ? Image::getImagesByUserId($connection, $user_id) : [];
-    $profileImage = $craftsman ? Image::getProfileImageByUserId($connection, $user_id) : null;
+    $userId = (int) $_GET["id"];
+    $craftsman = User::getApprovedUser($connection, $userId);
+    $allImages = $craftsman ? Image::getImagesByUserId($connection, $userId) : [];
+    $profileImage = $craftsman ? Image::getProfileImageByUserId($connection, $userId) : null;
     $galleryImages = $profileImage
         ? array_values(array_filter($allImages, fn($image) => (int) $image["id"] !== (int) $profileImage["id"]))
         : $allImages;
@@ -31,26 +31,26 @@ if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../query/header-query.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/one-craftsman.css">
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./query/header-query.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/one-craftsman.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 
     <script src="https://kit.fontawesome.com/1da98e69a2.js" crossorigin="anonymous"></script>
 
-    <title>Profil remeselnĂ­ka</title>
+    <title>Profil remeselníka</title>
 </head>
 
 <body>
-    <?php $publicBasePath = "../"; ?>
-    <?php require "../assets/header.php"; ?>
+    <?php $publicBasePath = "./"; ?>
+    <?php require "./assets/header.php"; ?>
 
     <main>
         <section class="one-craftsman">
             <?php if ($craftsman === null): ?>
-                <p class="empty-message">RemeselnĂ­k nebol nĂˇjdenĂ˝ alebo eĹˇte nie je schvĂˇlenĂ˝.</p>
+                <p class="empty-message">Remeselník nebol nájdený alebo ešte nie je schválený.</p>
             <?php else: ?>
                 <div class="one-craftsman-box">
                     <div class="profile-summary">
@@ -58,7 +58,7 @@ if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
                             <?php if ($profileImage): ?>
                                 <img
                                     class="profile-image"
-                                    src="<?= "../uploads/" . $craftsman["id"] . "/" . $profileImage["file_name"] ?>"
+                                    src="<?= "./uploads/" . $craftsman["id"] . "/" . $profileImage["file_name"] ?>"
                                     alt=""
                                 >
                             <?php else: ?>
@@ -75,7 +75,7 @@ if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
                             <p><span class="profile-label">Zameranie:</span> <?= htmlspecialchars(($craftsman["business_name"] ?? "") !== "" ? $craftsman["business_name"] : $craftsman["craft_name"]) ?></p>
                             <p><span class="profile-label">Remeslo:</span> <?= htmlspecialchars($craftsman["craft_name"]) ?></p>
                             <p><span class="profile-label">Mesto/obec:</span> <?= htmlspecialchars($craftsman["city"]) ?></p>
-                            <p><span class="profile-label">TelefĂłn:</span> <?= htmlspecialchars($craftsman["phone"] ?: "-") ?></p>
+                            <p><span class="profile-label">Telefón:</span> <?= htmlspecialchars($craftsman["phone"] ?: "-") ?></p>
                             <p><span class="profile-label">E-mail:</span> <?= htmlspecialchars($craftsman["email"] ?: "-") ?></p>
                             <p>
                                 <span class="profile-label">Facebook:</span>
@@ -97,11 +97,11 @@ if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
 
                     <section class="profile-photos">
                         <?php if (empty($galleryImages)): ?>
-                            <p>Fotky eĹˇte neboli pridanĂ©.</p>
+                            <p>Fotky ešte neboli pridané.</p>
                         <?php else: ?>
                             <div class="profile-photos-grid">
-                                <?php foreach ($galleryImages as $one_image): ?>
-                                    <?php $imagePath = "../uploads/" . $craftsman["id"] . "/" . $one_image["file_name"]; ?>
+                                <?php foreach ($galleryImages as $oneImage): ?>
+                                    <?php $imagePath = "./uploads/" . $craftsman["id"] . "/" . $oneImage["file_name"]; ?>
                                     <div class="profile-photo-card">
                                         <a
                                             href="<?= htmlspecialchars($imagePath) ?>"
@@ -124,12 +124,11 @@ if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
         </section>
     </main>
 
-    <?php require "../assets/footer.php"; ?>
+    <?php require "./assets/footer.php"; ?>
 
-    <script src="../JS/header.js"></script>
+    <script src="./JS/header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script src="../JS/glightbox-init.js"></script>
+    <script src="./JS/glightbox-init.js"></script>
 </body>
 
 </html>
-
