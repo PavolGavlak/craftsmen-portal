@@ -14,7 +14,7 @@ main {
     justify-content: center;
     align-items: center;
     background: linear-gradient(rgba(109, 101, 101, 0.537), rgba(105, 100, 100, 0.521)),
-        url(../img/cech-pozadie-dlhe.png);
+        url(../img/cech-pozadie-dlhe.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

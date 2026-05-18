@@ -4,11 +4,26 @@ require "./classes/Database.php";
 require "./classes/User.php";
 require "./classes/Image.php";
 
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+$loggedInUserId = isset($_SESSION["logged_in_user_id"]) ? (int) $_SESSION["logged_in_user_id"] : 0;
+$loggedInRole = $_SESSION["role"] ?? null;
+
 $database = new Database();
 $connection = $database->connectionDB();
 
 if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
     $userId = (int) $_GET["id"];
+
+    // Logged-in owners and admins should always land on the management version
+    // of the profile so they keep access to edit and photo actions.
+    if (($loggedInRole === "user" && $loggedInUserId === $userId) || $loggedInRole === "admin") {
+        header("Location: ./admin/one-craftsman.php?id={$userId}");
+        exit;
+    }
+
     $craftsman = User::getApprovedUser($connection, $userId);
     $allImages = $craftsman ? Image::getImagesByUserId($connection, $userId) : [];
     $profileImage = $craftsman ? Image::getProfileImageByUserId($connection, $userId) : null;

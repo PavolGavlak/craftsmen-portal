@@ -35,7 +35,7 @@ $imageBasePath = "./uploads/";
     <link rel="stylesheet" href="./css/craftsmen-list.css">
 
     <script src="https://kit.fontawesome.com/1da98e69a2.js" crossorigin="anonymous"></script>
-    <title>VĹˇetci remeselnĂ­ci</title>
+    <title>Všetci remeselníci</title>
 </head>
 
 <body>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 require "../classes/Database.php";
 require "../classes/Url.php";
@@ -48,10 +48,26 @@ if (!$id) {
     exit;
 }
 
+// Re-read the new account from the database so the post-registration
+// session uses the same identity data as the regular login flow.
+$registeredUserId = User::getUserId($connection, $email);
+$registeredUserRole = $registeredUserId !== null
+    ? User::getUseRole($connection, $registeredUserId)
+    : null;
+
+if ($registeredUserId === null || $registeredUserRole === null) {
+    echo "Používateľa sa nepodarilo prihlásiť po registrácii.";
+    exit;
+}
+
 session_regenerate_id(true);
 
 $_SESSION["is_logged_in"] = true;
-$_SESSION["logged_in_user_id"] = $id;
-$_SESSION["role"] = $role;
+$_SESSION["logged_in_user_id"] = $registeredUserId;
+$_SESSION["role"] = $registeredUserRole;
 
-Url::redirectUrl("/admin/one-craftsman.php?id=$id");
+// Persist the session before redirecting to avoid landing on the public
+// profile without management controls on the first request after signup.
+session_write_close();
+
+Url::redirectUrl("/admin/one-craftsman.php?id=$registeredUserId");
