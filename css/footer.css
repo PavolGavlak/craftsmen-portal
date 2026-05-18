@@ -2,6 +2,7 @@
     background-color: var(--site-dark);
     color: white;
     padding: 50px 0 20px;
+    margin-top: -18.5px;
 }
 
 .footer-inner {
