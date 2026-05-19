@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="sk">
 
 <head>
@@ -32,8 +32,8 @@
                     <input class="reg-input" type="text" name="phone" placeholder="Telefón"><br>
                     <input class="reg-input" type="text" name="facebook" placeholder="Facebook profil alebo odkaz"><br>
                     <textarea class="reg-input" name="description" placeholder="Popis vašej tvorby alebo remesla"></textarea><br>
-                    <input class="reg-input pass1" type="password" name="password" placeholder="Heslo" required><br>
-                    <input class="reg-input pass2" type="password" name="password-again" placeholder="Heslo znova" required><br>
+                    <input class="reg-input pass1" type="password" name="password" placeholder="Heslo" minlength="6" required><br>
+                    <input class="reg-input pass2" type="password" name="password-again" placeholder="Heslo znova" minlength="6" required><br>
                     <p class="result-text"></p>
                     <input class="btn" type="submit" value="Zaregistrovať">
                 </form>

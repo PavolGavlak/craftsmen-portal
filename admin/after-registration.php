@@ -23,9 +23,22 @@ $city = trim($_POST["city"] ?? "");
 $phone = trim($_POST["phone"] ?? "");
 $facebook = trim($_POST["facebook"] ?? "");
 $description = trim($_POST["description"] ?? "");
-$password = password_hash($_POST["password"] ?? "", PASSWORD_DEFAULT);
+$plainPassword = $_POST["password"] ?? "";
+$passwordConfirmation = $_POST["password-again"] ?? "";
 $role = "user";
 $status = "pending";
+
+if (mb_strlen($plainPassword) < 6) {
+    echo "Heslo musí mať aspoň 6 znakov.";
+    exit;
+}
+
+if ($plainPassword !== $passwordConfirmation) {
+    echo "Heslá sa nezhodujú.";
+    exit;
+}
+
+$password = password_hash($plainPassword, PASSWORD_DEFAULT);
 
 $id = User::createUser(
     $connection,
